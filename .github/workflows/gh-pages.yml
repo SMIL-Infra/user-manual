@@ -15,13 +15,13 @@ jobs:
 
       - name: Build to GitHub pages.
         run: |
-          git config user.email "github-action@scut-smil.cn"
-          git config user.name "GitHub Action"
           GIT_REMOTE=$(git remote get-url origin)
           yarn install
           yarn build
           cd src/.vuepress/dist
           git init
+          git config user.email "github-action@scut-smil.cn"
+          git config user.name "GitHub Action"
           git add -A
           git commit -m 'Deploy'
           git push -f ${GIT_REMOTE} master:gh-pages
