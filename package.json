@@ -1,0 +1,21 @@
+{
+  "name": "smil-infra-user-manual",
+  "version": "0.0.1",
+  "description": "SMIL内部服务用户手册",
+  "main": "index.js",
+  "authors": {
+    "name": "胡玮文",
+    "email": "sehuww@mail.scut.edu.cn"
+  },
+  "repository": "https://github.com/SMIL-Infra/user-manual.git",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "@vuepress/plugin-medium-zoom": "^1.7.1",
+    "vuepress": "^1.7.1"
+  }
+}
