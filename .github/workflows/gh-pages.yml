@@ -13,15 +13,27 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: ~/.cache/yarn/ga
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Build to GitHub pages.
         run: |
-          GIT_REMOTE=$(git remote get-url origin)
-          yarn install
+          yarn install --cache-folder ~/.cache/yarn/ga
           yarn build
+
           cd src/.vuepress/dist
           git init
           git config user.email "github-action@scut-smil.cn"
           git config user.name "GitHub Action"
           git add -A
           git commit -m 'Deploy'
-          git push -f ${GIT_REMOTE} master:gh-pages
+
+          cd -
+          git remote add dist src/.vuepress/dist
+          git fetch dist
+          git push -f origin refs/remotes/dist/master:refs/heads/gh-pages
