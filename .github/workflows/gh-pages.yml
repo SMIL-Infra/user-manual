@@ -18,6 +18,7 @@ jobs:
           git config user.email "github-action@scut-smil.cn"
           git config user.name "GitHub Action"
           GIT_REMOTE=$(git remote get-url origin)
+          yarn install
           yarn build
           cd src/.vuepress/dist
           git init
