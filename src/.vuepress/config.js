@@ -5,7 +5,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'SMIL内部服务用户手册',
+  title: 'SMIL服务用户手册',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
