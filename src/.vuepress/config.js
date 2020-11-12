@@ -53,6 +53,7 @@ module.exports = {
             'getting-started',
             'client-config',
             'deps-install',
+            'file-transfer',
           ]
         }
       ],

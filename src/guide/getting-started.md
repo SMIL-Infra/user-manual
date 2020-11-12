@@ -5,7 +5,7 @@
 我们会为你提供初始密码，请使用该密码登录任何一台服务器，并按提示修改密码。
 
 在Windows10系统上，右键单击左下角的Windows徽标，选择“Windows PowerShell”，在打开的窗口中键入：
-```
+```powershell
 ssh <你的用户名>@gpu024.scut-smil.cn
 ```
 
