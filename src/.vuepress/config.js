@@ -28,11 +28,11 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: '',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
-    lastUpdated: false,
+    repo: 'SMIL-Infra/user-manual',
+    editLinks: true,
+    docsDir: 'src',
+    editLinkText: '改进此文档',
+    lastUpdated: true,
     nav: [
       {
         text: '入门',
@@ -42,10 +42,6 @@ module.exports = {
         text: '域名',
         link: '/hostname/'
       },
-      {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
-      }
     ],
     sidebar: {
       '/guide/': [
@@ -54,7 +50,9 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'using-vue',
+            'getting-started',
+            'client-config',
+            'deps-install',
           ]
         }
       ],
