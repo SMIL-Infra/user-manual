@@ -32,7 +32,7 @@ module.exports = {
     editLinks: true,
     docsDir: 'src',
     editLinkText: '改进此文档',
-    lastUpdated: true,
+    lastUpdated: '更新时间',
     nav: [
       {
         text: '入门',
