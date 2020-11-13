@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  base: '/user-manual/',
+  base: '/',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
@@ -40,7 +40,7 @@ module.exports = {
       },
       {
         text: '域名',
-        link: '/hostname/'
+        link: '/dns/'
       },
     ],
     sidebar: {
@@ -57,6 +57,17 @@ module.exports = {
           ]
         }
       ],
+      '/dns/': [
+        {
+          title: '域名解析',
+          collapsable: false,
+          children: [
+            '',
+            'using',
+            'all-servers',
+          ]
+        }
+      ]
     }
   },
 
