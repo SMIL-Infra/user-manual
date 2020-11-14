@@ -42,6 +42,14 @@ module.exports = {
         text: '域名',
         link: '/dns/'
       },
+      {
+        text: '认证',
+        link: '/auth/'
+      },
+      {
+        text: '存储',
+        link: '/storage/'
+      }
     ],
     sidebar: {
       '/guide/': [
@@ -67,7 +75,27 @@ module.exports = {
             'all-servers',
           ]
         }
-      ]
+      ],
+      '/auth/': [
+        {
+          title: '统一认证',
+          collapsable: false,
+          children: [
+            '',
+            'self-service',
+            'migration',
+          ]
+        }
+      ],
+      '/storage/': [
+        {
+          title: '分布式存储',
+          collapsable: false,
+          children: [
+            '',
+          ]
+        }
+      ],
     }
   },
 
