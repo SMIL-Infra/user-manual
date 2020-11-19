@@ -9,7 +9,7 @@ OpenSSH客户端在每台Windows 10的PC上都已经预装，是入门最快的�
 ssh gpu024
 ```
 
-用你喜欢的编辑器打开文件`%userprofile%\.ssh\config`（Linux用户请使用`~/.ssh/config`），并添加以下内容：
+用你喜欢的编辑器打开文件`%userprofile%\.ssh\config`（Linux用户请使用`~/.ssh/config`），并添加以下内容在文件顶部：
 
 ```
 CanonicalizeHostname yes
