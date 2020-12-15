@@ -13,11 +13,12 @@ ipa passwd
 
 ## 修改个人信息
 
-例如，修改自己的默认shell，姓名等
+例如，修改自己的默认shell，home目录，姓名等
 ```bash
 ipa user-mod <你的用户名> --shell /usr/bin/zsh
+ipa user-mod <你的用户名> --homedir /mnt/cephfs/home/<你的用户名>
 ```
-详见`ipa user-mod --help`
+详见`ipa user-mod --help`。修改后，需要几分钟时间才能同步至各台服务器。
 
 ## 添加ssh公钥
 
