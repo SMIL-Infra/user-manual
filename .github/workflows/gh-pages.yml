@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # needed to generate modification time
 
       - uses: actions/cache@v1
         id: yarn-cache
