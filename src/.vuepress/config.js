@@ -1,5 +1,7 @@
 const { description } = require('../../package')
 
+const datasetPages = [];
+
 module.exports = {
   base: '/',
   /**
@@ -49,7 +51,11 @@ module.exports = {
       {
         text: '存储',
         link: '/storage/'
-      }
+      },
+      {
+        text: '数据集',
+        link: '/dataset/'
+      },
     ],
     sidebar: {
       '/guide/': [
@@ -96,6 +102,14 @@ module.exports = {
           ]
         }
       ],
+      '/dataset/': [
+        '',
+        {
+          title: '数据集',
+          collapsable: false,
+          children: datasetPages  // To be filled by plugin
+        },
+      ],
     }
   },
 
@@ -105,5 +119,6 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    [require('./datasetMgr'), { datasetPages }],
   ]
 }
