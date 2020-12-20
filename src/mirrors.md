@@ -41,9 +41,9 @@ custom_channels:
   simpleitk: https://mirrors.scut-smil.cn/anaconda/cloud
 ```
 
-## Nvidia
+## NVIDIA
 
-包含Nvidia发行的pip包，如[DALI](https://developer.nvidia.com/DALI)。本镜像是 https://developer.download.nvidia.cn/compute/redist 的缓存反向代理。
+包含NVIDIA发行的pip包，如[DALI](https://developer.nvidia.com/DALI)。本镜像是 https://developer.download.nvidia.cn/compute/redist 的缓存反向代理。
 
 使用时将安装网址中的`https://developer.download.nvidia.com/compute/redist`替换为`https://mirrors.scut-smil.cn/nvidia/compute/redist`。例如，参考[DALI的文档](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/installation.html)，安装的命令为：
 ```bash
