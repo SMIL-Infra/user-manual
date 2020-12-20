@@ -56,6 +56,10 @@ module.exports = {
         text: '数据集',
         link: '/dataset/'
       },
+      {
+        text: '镜像',
+        link: '/mirrors'
+      }
     ],
     sidebar: {
       '/guide/': [
@@ -110,6 +114,7 @@ module.exports = {
           children: datasetPages  // To be filled by plugin
         },
       ],
+      '/': 'auto',
     }
   },
 
