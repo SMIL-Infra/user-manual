@@ -28,7 +28,7 @@ export default {
     methods: {
         async queryAccount() {
             this.loading = true;
-            const promUrl = new URL('http://gpu016.scut-smil.cn:9090/api/v1/query');
+            const promUrl = new URL('https://prometheus.scut-smil.cn/api/v1/query');
             promUrl.searchParams.set('query', `node_local_account_info{name="${this.name}"}`);
             try {
                 const res = await fetch(promUrl);
