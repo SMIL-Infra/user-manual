@@ -94,6 +94,7 @@ module.exports = {
             '',
             'self-service',
             'migration',
+            'my-local-account',
           ]
         }
       ],

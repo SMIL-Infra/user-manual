@@ -19,9 +19,9 @@ jobs:
         id: yarn-cache
         with:
           path: ~/.cache/yarn/ga
-          key: ${{ runner.os }}-yarn-2-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn2-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-yarn2-
 
       - name: Build to GitHub pages.
         run: |
