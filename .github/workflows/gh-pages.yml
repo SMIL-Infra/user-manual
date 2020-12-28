@@ -19,7 +19,7 @@ jobs:
         id: yarn-cache
         with:
           path: ~/.cache/yarn/ga
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-2-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
@@ -28,7 +28,7 @@ jobs:
           sudo ln -sf /usr/share/zoneinfo/PRC /etc/localtime
           sudo dpkg-reconfigure --frontend=noninteractive tzdata
 
-          yarn install --cache-folder ~/.cache/yarn/ga
+          YARN_CACHE_FOLDER=${HOME}/.cache/yarn/ga yarn install
           yarn build
 
           cd src/.vuepress/dist
