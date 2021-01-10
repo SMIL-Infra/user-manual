@@ -1,7 +1,7 @@
 ---
 path: a2d2_process
 quota:
-  bytes: 100,301,853,696
+  bytes: 100301853696
   files: 28641
 owner: lizhenliang
 ---
