@@ -1,0 +1,39 @@
+---
+path: a2d2_process
+quota:
+  bytes: 100,301,853,696
+  files: 28641
+owner: lizhenliang
+---
+
+
+# A2D2_process
+
+<dataset-info/>
+
+
+[原始数据集](https://www.a2d2.audi/a2d2/en/download.html)
+[处理数据参考代码](https://github.com/valeoai/xmuda)
+
+## 处理后数据集概况
+该数据目的是用于点云+RGB的语义分割，包含的数据有如下4种。
+1. 点云数据
+2. 点云对应label
+3. 点云投影后的uv坐标
+4. 点云对应RGB图片
+
+## 数据集目录结构
+- preprocess
+  + train.pkl (27695 samples)
+  + test.pkl  (942 samples)
+- 2018xxxx
+  + RGB images (.png)
+- 2018xxxx (...)
+
+## pkl文件内容
+使用python pickle 读取pkl文件后得到样本的list, list的元素是单个样本的dict结构。key, value 如下
+- **points:**      ndarray (N, 3)  点云数据
+- **seg_labels:**      ndarray (N, )  点云对应label
+- **points_img:**  ndarray(N, 2) 点云投影到image的像素坐标值，row与column
+- **lidar_path:** lidar文件的路径 （lidar在原A2D2数据集中，不在pkl文件. 用处不大，因为点云已经包含在pkl内）
+- **camera_path:** image文件的路径 （image包含在2018开头的目录内，不在pkl文件）
