@@ -1,22 +1,31 @@
-#A2D2数据集处理后数据
-[原始数据集](https://www.a2d2.audi/a2d2/en/download.html)<br\>
+---
+path: a2d2_process
+quota:
+  bytes: 100,301,853,696
+  files: 28641
+owner: lizhenliang
+---
+
+# A2D2处理后数据集
+
+<dataset-info/>
+
+[原始数据集](https://www.a2d2.audi/a2d2/en/download.html)
 [处理数据参考代码](https://github.com/valeoai/xmuda)
 
-##处理后数据集概况
+## 处理后数据集概况
 该数据目的是用于点云+RGB的语义分割，包含的数据有如下4种。
 1. 点云数据
 2. 点云对应label
 3. 点云投影后的uv坐标
 4. 点云对应RGB图片
 
-##数据集目录结构
+## 数据集目录结构
 - preprocess
   + train.pkl (27695 samples)
   + test.pkl  (942 samples)
 - 2018xxxx
-  + camera
-        * cam_front_center
-          - RGB images (.png)
+  + RGB images (.png)
 - 2018xxxx (...)
 
 ## pkl文件内容
