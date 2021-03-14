@@ -11,6 +11,7 @@ dist
 config.local.js
 basement_dist
 
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
