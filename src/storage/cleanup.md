@@ -23,13 +23,13 @@ pip install cephdu
 其一般的使用方式如下：
 
 ```
-cephdu -d 1 -h /mnt/mixed/dataset
+cephdu -d 1 -h /mnt/mixed/dataset | sort -h
 ```
 
-`cephdu`会调用`getfattr`命令查询目录大小，其在O(1)时间复杂度内返回结果。
+`cephdu`借助cephfs的特性，可在O(1)时间复杂度内返回结果。
 
 
-如果你希望使用`getfattr`命令查询目录大小和其中的文件数量，可以参考以下命令：
+也可使用`getfattr`命令查询目录大小和其中的文件数量，可以参考以下命令：
 
 * 文件夹中文件总大小：`getfattr -n ceph.dir.rbytes /PATH/TO/DIR-IN-CEPHFS`
 * 文件夹中文件总文件数量：`getfattr -n ceph.dir.rfiles /PATH/TO/DIR-IN-CEPHFS`
