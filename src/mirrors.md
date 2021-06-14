@@ -49,3 +49,29 @@ custom_channels:
 ```bash
 pip install --extra-index-url https://mirrors.scut-smil.cn/nvidia/compute/redist nvidia-dali-cuda110
 ```
+
+## APT镜像
+
+以Ubuntu 20.04 (focal)为例
+
+### Ubuntu
+
+```
+deb https://mirrors.scut-smil.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.scut-smil.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.scut-smil.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.scut-smil.cn/ubuntu/ focal-security main restricted universe multiverse
+```
+本镜像反向代理至清华源。
+
+### ceph
+
+```
+deb https://mirrors.scut-smil.cn/ceph/debian-pacific/ focal main
+```
+
+### docker-ce
+
+```
+deb [arch=amd64] https://mirrors.scut-smil.cn/docker-ce/linux/ubuntu focal stable
+```
