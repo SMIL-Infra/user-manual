@@ -56,6 +56,7 @@ pip install --extra-index-url https://mirrors.scut-smil.cn/nvidia/compute/redist
 
 ### Ubuntu
 
+编辑`/etc/apt/sources.list`
 ```
 deb https://mirrors.scut-smil.cn/ubuntu/ focal main restricted universe multiverse
 deb https://mirrors.scut-smil.cn/ubuntu/ focal-updates main restricted universe multiverse
@@ -66,12 +67,22 @@ deb https://mirrors.scut-smil.cn/ubuntu/ focal-security main restricted universe
 
 ### ceph
 
+添加公钥
+```bash
+curl -L https://download.ceph.com/keys/release.asc | sudo apt-key add -
+```
+编辑`/etc/apt/sources.list.d/ceph.list`
 ```
 deb https://mirrors.scut-smil.cn/ceph/debian-pacific/ focal main
 ```
 
 ### docker-ce
 
+添加公钥：
+```bash
+curl -L https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+编辑`/etc/apt/sources.list.d/docker-ce.list`
 ```
 deb [arch=amd64] https://mirrors.scut-smil.cn/docker-ce/linux/ubuntu focal stable
 ```
