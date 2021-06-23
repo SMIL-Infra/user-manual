@@ -5,6 +5,7 @@
 在使用时，在安装其他软件或编译前，先执行以下以下命令以设置环境变量（[参考NVIDIA文档](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#environment-setup)）：
 ```bash
 # 在下列几行中选择一个版本
+# export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-9.0
 export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.2
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-11.0
 
@@ -25,6 +26,22 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ## /mnt/cephfs/smil/cuda中的软件的安装方法
 
 供大家在排查问题时参考
+
+### cuda-9.0
+
+```bash
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.1_linux-run
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.2_linux-run
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.3_linux-run
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.4_linux-run
+chmod +x cuda_*run
+./cuda_9.0.176.1_linux-run --silent --toolkit --toolkitpath=/mnt/cephfs/smil/cuda/cuda-9.0/ --override
+./cuda_9.0.176.1_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+./cuda_9.0.176.2_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+./cuda_9.0.176.3_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+./cuda_9.0.176.4_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+```
 
 ### cuda-10.2
 
