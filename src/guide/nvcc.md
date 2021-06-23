@@ -8,6 +8,7 @@
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-9.0
 export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.2
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-11.0
+# export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-11.1
 
 export PATH=${CUDA_HOME}/bin${PATH:+:${PATH}}
 ```
