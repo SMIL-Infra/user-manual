@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>A2D2处理后数据集 | SMIL服务用户手册</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="SMIL内部服务用户手册">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.35224500.css" as="style"><link rel="preload" href="/assets/js/app.27bf15aa.js" as="script"><link rel="preload" href="/assets/js/3.b13483ee.js" as="script"><link rel="preload" href="/assets/js/21.a3fbe792.js" as="script"><link rel="preload" href="/assets/js/4.20735d68.js" as="script"><link rel="prefetch" href="/assets/js/1.fbf5f6e5.js"><link rel="prefetch" href="/assets/js/10.b14de3b3.js"><link rel="prefetch" href="/assets/js/11.3844dd5d.js"><link rel="prefetch" href="/assets/js/12.980022fd.js"><link rel="prefetch" href="/assets/js/13.45fc977d.js"><link rel="prefetch" href="/assets/js/14.54ce2e00.js"><link rel="prefetch" href="/assets/js/15.583505d9.js"><link rel="prefetch" href="/assets/js/16.c8c5f4a0.js"><link rel="prefetch" href="/assets/js/17.c14ee82b.js"><link rel="prefetch" href="/assets/js/18.dcd9cb3e.js"><link rel="prefetch" href="/assets/js/19.5198c81c.js"><link rel="prefetch" href="/assets/js/20.39a1a2d8.js"><link rel="prefetch" href="/assets/js/22.8ae6ab4f.js"><link rel="prefetch" href="/assets/js/23.46226149.js"><link rel="prefetch" href="/assets/js/24.6d1d0fd6.js"><link rel="prefetch" href="/assets/js/25.86deb47c.js"><link rel="prefetch" href="/assets/js/26.909d9da6.js"><link rel="prefetch" href="/assets/js/27.5fc8feff.js"><link rel="prefetch" href="/assets/js/28.35f5764d.js"><link rel="prefetch" href="/assets/js/29.a57b217d.js"><link rel="prefetch" href="/assets/js/30.766b789f.js"><link rel="prefetch" href="/assets/js/31.8f3222c0.js"><link rel="prefetch" href="/assets/js/32.1e7c7971.js"><link rel="prefetch" href="/assets/js/33.74811dce.js"><link rel="prefetch" href="/assets/js/34.b62451af.js"><link rel="prefetch" href="/assets/js/35.c21e90f8.js"><link rel="prefetch" href="/assets/js/36.5aa4f839.js"><link rel="prefetch" href="/assets/js/37.54f2fe56.js"><link rel="prefetch" href="/assets/js/38.d5e69b58.js"><link rel="prefetch" href="/assets/js/39.c2b348a4.js"><link rel="prefetch" href="/assets/js/5.91253514.js"><link rel="prefetch" href="/assets/js/6.de0d0152.js"><link rel="prefetch" href="/assets/js/7.956c6c25.js"><link rel="prefetch" href="/assets/js/8.dbd1c7e5.js"><link rel="prefetch" href="/assets/js/9.84d020a4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35224500.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">SMIL服务用户手册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link router-link-active">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link router-link-active">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/dataset/" aria-current="page" class="sidebar-link">所有数据集</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>数据集</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dataset/a2d2_process.html" aria-current="page" class="active sidebar-link">A2D2处理后数据集</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dataset/a2d2_process.html#处理后数据集概况" class="sidebar-link">处理后数据集概况</a></li><li class="sidebar-sub-header"><a href="/dataset/a2d2_process.html#数据集目录结构" class="sidebar-link">数据集目录结构</a></li><li class="sidebar-sub-header"><a href="/dataset/a2d2_process.html#pkl文件内容" class="sidebar-link">pkl文件内容</a></li></ul></li><li><a href="/dataset/imagenet.html" class="sidebar-link">ImageNet</a></li><li><a href="/dataset/kitti-raw.html" class="sidebar-link">KITTI Raw Data</a></li><li><a href="/dataset/kitti-process.html" class="sidebar-link">KITTI raw处理后数据</a></li><li><a href="/dataset/stl10-images.html" class="sidebar-link">STL-10 Images</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="a2d2处理后数据集"><a href="#a2d2处理后数据集" class="header-anchor">#</a> A2D2处理后数据集</h1> <div class="dataset-info-container" data-v-7e46f340><dl data-v-7e46f340><dt data-v-7e46f340>路径</dt> <dd data-v-7e46f340>/mnt/cephfs/dataset/a2d2_process</dd> <dt data-v-7e46f340>限额</dt> <dd data-v-7e46f340><span title="100301853696 B" data-v-7e46f340>93.41 GiB</span><br data-v-7e46f340> <span title="28641" data-v-7e46f340>28.64 K</span>个文件
+    </dd> <dt data-v-7e46f340>所有者</dt> <dd data-v-7e46f340>lizhenliang</dd></dl></div> <p><a href="https://www.a2d2.audi/a2d2/en/download.html" target="_blank" rel="noopener noreferrer">原始数据集<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://github.com/valeoai/xmuda" target="_blank" rel="noopener noreferrer">处理数据参考代码<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="处理后数据集概况"><a href="#处理后数据集概况" class="header-anchor">#</a> 处理后数据集概况</h2> <p>该数据目的是用于点云+RGB的语义分割，包含的数据有如下4种。</p> <ol><li>点云数据</li> <li>点云对应label</li> <li>点云投影后的uv坐标</li> <li>点云对应RGB图片</li></ol> <h2 id="数据集目录结构"><a href="#数据集目录结构" class="header-anchor">#</a> 数据集目录结构</h2> <ul><li>preprocess
+<ul><li>train.pkl (27695 samples)</li> <li>test.pkl  (942 samples)</li></ul></li> <li>2018xxxx
+<ul><li>RGB images (.png)</li></ul></li> <li>2018xxxx (...)</li></ul> <h2 id="pkl文件内容"><a href="#pkl文件内容" class="header-anchor">#</a> pkl文件内容</h2> <p>使用python pickle 读取pkl文件后得到样本的list, list的元素是单个样本的dict结构。key, value 如下</p> <ul><li><strong>points:</strong>      ndarray (N, 3)  点云数据</li> <li><strong>seg_labels:</strong>      ndarray (N, )  点云对应label</li> <li><strong>points_img:</strong>  ndarray(N, 2) 点云投影到image的像素坐标值，row与column</li> <li><strong>lidar_path:</strong> lidar文件的路径 （lidar在原A2D2数据集中，不在pkl文件. 用处不大，因为点云已经包含在pkl内）</li> <li><strong>camera_path:</strong> image文件的路径 （image包含在2018开头的目录内，不在pkl文件）</li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/SMIL-Infra/user-manual/edit/master/src/dataset/a2d2_process.md" target="_blank" rel="noopener noreferrer">改进此文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">1/10/2021, 11:08:19 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/dataset/" class="prev router-link-active">
+        所有数据集
+      </a></span> <span class="next"><a href="/dataset/imagenet.html">
+        ImageNet
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.27bf15aa.js" defer></script><script src="/assets/js/3.b13483ee.js" defer></script><script src="/assets/js/21.a3fbe792.js" defer></script><script src="/assets/js/4.20735d68.js" defer></script>
+  </body>
+</html>

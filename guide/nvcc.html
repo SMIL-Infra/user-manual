@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>编译CUDA代码 | SMIL服务用户手册</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="SMIL内部服务用户手册">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.35224500.css" as="style"><link rel="preload" href="/assets/js/app.27bf15aa.js" as="script"><link rel="preload" href="/assets/js/3.b13483ee.js" as="script"><link rel="preload" href="/assets/js/34.b62451af.js" as="script"><link rel="prefetch" href="/assets/js/1.fbf5f6e5.js"><link rel="prefetch" href="/assets/js/10.b14de3b3.js"><link rel="prefetch" href="/assets/js/11.3844dd5d.js"><link rel="prefetch" href="/assets/js/12.980022fd.js"><link rel="prefetch" href="/assets/js/13.45fc977d.js"><link rel="prefetch" href="/assets/js/14.54ce2e00.js"><link rel="prefetch" href="/assets/js/15.583505d9.js"><link rel="prefetch" href="/assets/js/16.c8c5f4a0.js"><link rel="prefetch" href="/assets/js/17.c14ee82b.js"><link rel="prefetch" href="/assets/js/18.dcd9cb3e.js"><link rel="prefetch" href="/assets/js/19.5198c81c.js"><link rel="prefetch" href="/assets/js/20.39a1a2d8.js"><link rel="prefetch" href="/assets/js/21.a3fbe792.js"><link rel="prefetch" href="/assets/js/22.8ae6ab4f.js"><link rel="prefetch" href="/assets/js/23.46226149.js"><link rel="prefetch" href="/assets/js/24.6d1d0fd6.js"><link rel="prefetch" href="/assets/js/25.86deb47c.js"><link rel="prefetch" href="/assets/js/26.909d9da6.js"><link rel="prefetch" href="/assets/js/27.5fc8feff.js"><link rel="prefetch" href="/assets/js/28.35f5764d.js"><link rel="prefetch" href="/assets/js/29.a57b217d.js"><link rel="prefetch" href="/assets/js/30.766b789f.js"><link rel="prefetch" href="/assets/js/31.8f3222c0.js"><link rel="prefetch" href="/assets/js/32.1e7c7971.js"><link rel="prefetch" href="/assets/js/33.74811dce.js"><link rel="prefetch" href="/assets/js/35.c21e90f8.js"><link rel="prefetch" href="/assets/js/36.5aa4f839.js"><link rel="prefetch" href="/assets/js/37.54f2fe56.js"><link rel="prefetch" href="/assets/js/38.d5e69b58.js"><link rel="prefetch" href="/assets/js/39.c2b348a4.js"><link rel="prefetch" href="/assets/js/4.20735d68.js"><link rel="prefetch" href="/assets/js/5.91253514.js"><link rel="prefetch" href="/assets/js/6.de0d0152.js"><link rel="prefetch" href="/assets/js/7.956c6c25.js"><link rel="prefetch" href="/assets/js/8.dbd1c7e5.js"><link rel="prefetch" href="/assets/js/9.84d020a4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35224500.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">SMIL服务用户手册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/guide/getting-started.html" class="sidebar-link">开始使用</a></li><li><a href="/guide/client-config.html" class="sidebar-link">客户端配置</a></li><li><a href="/guide/deps-install.html" class="sidebar-link">环境搭建</a></li><li><a href="/guide/file-transfer.html" class="sidebar-link">文件传输</a></li><li><a href="/guide/nvcc.html" aria-current="page" class="active sidebar-link">编译CUDA代码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/nvcc.html#mnt-cephfs-smil-cuda中的软件的安装方法" class="sidebar-link">/mnt/cephfs/smil/cuda中的软件的安装方法</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="编译cuda代码"><a href="#编译cuda代码" class="header-anchor">#</a> 编译CUDA代码</h1> <p>在安装一些依赖，或者编译其他CUDA代码时，需要使用NVIDIA发布的编译器nvcc，但该软件不太容易安装。因此我们提供了全局安装，方便大家使用。</p> <p>在使用时，在安装其他软件或编译前，先执行以下以下命令以设置环境变量（<a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#environment-setup" target="_blank" rel="noopener noreferrer">参考NVIDIA文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 在下列几行中选择一个版本</span>
+<span class="token comment"># export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-9.0</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CUDA_HOME</span><span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-10.2
+<span class="token comment"># export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-11.0</span>
+<span class="token comment"># export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-11.1</span>
+
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">${CUDA_HOME}</span>/bin<span class="token variable">${<span class="token environment constant">PATH</span><span class="token operator">:+</span><span class="token operator">:</span>${<span class="token environment constant">PATH</span>}</span><span class="token punctuation">}</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">注意</p> <p>在选择版本时，请保持CUDA_HOME引用的版本和其他库使用的版本一致，例如pytorch安装时选择的版本。</p></div> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>编译好的软件在运行时也需要链接一些动态库。如果你使用pip或conda安装pytorch的话，这些都应该已经自动安装了。但如果出现找不到cuda相关动态链接库的错误，可以尝试从全局安装的目录中加载。添加以下环境变量：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span><span class="token variable">${CUDA_HOME}</span>/lib64<span class="token variable">${LD_LIBRARY_PATH<span class="token operator">:+</span><span class="token operator">:</span>${LD_LIBRARY_PATH}</span><span class="token punctuation">}</span>
+</code></pre></div></div> <h2 id="mnt-cephfs-smil-cuda中的软件的安装方法"><a href="#mnt-cephfs-smil-cuda中的软件的安装方法" class="header-anchor">#</a> /mnt/cephfs/smil/cuda中的软件的安装方法</h2> <p>供大家在排查问题时参考</p> <h3 id="cuda-9-0"><a href="#cuda-9-0" class="header-anchor">#</a> cuda-9.0</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run
+<span class="token function">wget</span> https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.1_linux-run
+<span class="token function">wget</span> https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.2_linux-run
+<span class="token function">wget</span> https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.3_linux-run
+<span class="token function">wget</span> https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/4/cuda_9.0.176.4_linux-run
+<span class="token function">chmod</span> +x cuda_*run
+./cuda_9.0.176.1_linux-run --silent --toolkit --toolkitpath<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-9.0/ --override
+./cuda_9.0.176.1_linux-run --silent --installdir<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+./cuda_9.0.176.2_linux-run --silent --installdir<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+./cuda_9.0.176.3_linux-run --silent --installdir<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+./cuda_9.0.176.4_linux-run --silent --installdir<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+</code></pre></div><h3 id="cuda-10-2"><a href="#cuda-10-2" class="header-anchor">#</a> cuda-10.2</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> https://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
+<span class="token function">wget</span> https://developer.download.nvidia.com/compute/cuda/10.2/Prod/patches/1/cuda_10.2.1_linux.run
+<span class="token function">wget</span> https://developer.download.nvidia.com/compute/cuda/10.2/Prod/patches/2/cuda_10.2.2_linux.run
+<span class="token function">chmod</span> +x cuda_*.run
+./cuda_10.2.89_440.33.01_linux.run --silent --toolkit --installpath<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-10.2/
+./cuda_10.2.1_linux.run --silent --toolkit --installpath<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-10.2/
+./cuda_10.2.2_linux.run --silent --toolkit --installpath<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-10.2/
+</code></pre></div><h3 id="cuda-11-0"><a href="#cuda-11-0" class="header-anchor">#</a> cuda-11.0</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run
+<span class="token function">chmod</span> +x cuda_*.run
+./cuda_11.0.3_450.51.06_linux.run --silent --toolkit --installpath<span class="token operator">=</span>/mnt/cephfs/smil/cuda/cuda-11.0/
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/SMIL-Infra/user-manual/edit/master/src/guide/nvcc.md" target="_blank" rel="noopener noreferrer">改进此文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">6/23/2021, 12:17:45 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/file-transfer.html" class="prev">
+        文件传输
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.27bf15aa.js" defer></script><script src="/assets/js/3.b13483ee.js" defer></script><script src="/assets/js/34.b62451af.js" defer></script>
+  </body>
+</html>

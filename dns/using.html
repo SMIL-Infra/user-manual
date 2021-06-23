@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用域名系统 | SMIL服务用户手册</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="SMIL内部服务用户手册">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.35224500.css" as="style"><link rel="preload" href="/assets/js/app.27bf15aa.js" as="script"><link rel="preload" href="/assets/js/3.b13483ee.js" as="script"><link rel="preload" href="/assets/js/29.a57b217d.js" as="script"><link rel="prefetch" href="/assets/js/1.fbf5f6e5.js"><link rel="prefetch" href="/assets/js/10.b14de3b3.js"><link rel="prefetch" href="/assets/js/11.3844dd5d.js"><link rel="prefetch" href="/assets/js/12.980022fd.js"><link rel="prefetch" href="/assets/js/13.45fc977d.js"><link rel="prefetch" href="/assets/js/14.54ce2e00.js"><link rel="prefetch" href="/assets/js/15.583505d9.js"><link rel="prefetch" href="/assets/js/16.c8c5f4a0.js"><link rel="prefetch" href="/assets/js/17.c14ee82b.js"><link rel="prefetch" href="/assets/js/18.dcd9cb3e.js"><link rel="prefetch" href="/assets/js/19.5198c81c.js"><link rel="prefetch" href="/assets/js/20.39a1a2d8.js"><link rel="prefetch" href="/assets/js/21.a3fbe792.js"><link rel="prefetch" href="/assets/js/22.8ae6ab4f.js"><link rel="prefetch" href="/assets/js/23.46226149.js"><link rel="prefetch" href="/assets/js/24.6d1d0fd6.js"><link rel="prefetch" href="/assets/js/25.86deb47c.js"><link rel="prefetch" href="/assets/js/26.909d9da6.js"><link rel="prefetch" href="/assets/js/27.5fc8feff.js"><link rel="prefetch" href="/assets/js/28.35f5764d.js"><link rel="prefetch" href="/assets/js/30.766b789f.js"><link rel="prefetch" href="/assets/js/31.8f3222c0.js"><link rel="prefetch" href="/assets/js/32.1e7c7971.js"><link rel="prefetch" href="/assets/js/33.74811dce.js"><link rel="prefetch" href="/assets/js/34.b62451af.js"><link rel="prefetch" href="/assets/js/35.c21e90f8.js"><link rel="prefetch" href="/assets/js/36.5aa4f839.js"><link rel="prefetch" href="/assets/js/37.54f2fe56.js"><link rel="prefetch" href="/assets/js/38.d5e69b58.js"><link rel="prefetch" href="/assets/js/39.c2b348a4.js"><link rel="prefetch" href="/assets/js/4.20735d68.js"><link rel="prefetch" href="/assets/js/5.91253514.js"><link rel="prefetch" href="/assets/js/6.de0d0152.js"><link rel="prefetch" href="/assets/js/7.956c6c25.js"><link rel="prefetch" href="/assets/js/8.dbd1c7e5.js"><link rel="prefetch" href="/assets/js/9.84d020a4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35224500.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">SMIL服务用户手册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link router-link-active">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link router-link-active">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>域名解析</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dns/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/dns/using.html" aria-current="page" class="active sidebar-link">使用域名系统</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dns/using.html#使用域名访问服务器" class="sidebar-link">使用域名访问服务器</a></li><li class="sidebar-sub-header"><a href="/dns/using.html#查看本机的完整域名" class="sidebar-link">查看本机的完整域名</a></li><li class="sidebar-sub-header"><a href="/dns/using.html#手动解析ip地址" class="sidebar-link">手动解析IP地址</a></li><li class="sidebar-sub-header"><a href="/dns/using.html#反向域名解析" class="sidebar-link">反向域名解析</a></li></ul></li><li><a href="/dns/all-servers.html" class="sidebar-link">所有服务器列表</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用域名系统"><a href="#使用域名系统" class="header-anchor">#</a> 使用域名系统</h1> <p>域名系统历史悠久，源远流长，自1985年以来，域名系统一直是Internet功能的重要组成部分。至今人们已经发明了非常多利用域名的方法。这里列举一些最常用的，便于大家快速完成工作。</p> <p>在以下例子中，单标签的短域名仅可在服务器上，或完成了<a href="/guide/client-config.html#dns搜索域">配置</a>的客户端上使用。否则，请给域名加上<code>.scut-smil.cn</code>的后缀。</p> <h2 id="使用域名访问服务器"><a href="#使用域名访问服务器" class="header-anchor">#</a> 使用域名访问服务器</h2> <p>在连接服务器，传输文件等操作的时候，可以直接使用域名，例如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ssh</span> gpu024
+Welcome to Ubuntu <span class="token number">18.04</span>.3 LTS <span class="token punctuation">(</span>GNU/Linux <span class="token number">5.4</span>.0-52-generic x86_64<span class="token punctuation">)</span>
+<span class="token punctuation">..</span>.
+
+$ <span class="token function">scp</span> gpu024:somefile.txt ./
+somefile.txt                          <span class="token number">100</span>%   <span class="token number">10</span>     <span class="token number">9</span>.2KB/s   00:00
+</code></pre></div><h2 id="查看本机的完整域名"><a href="#查看本机的完整域名" class="header-anchor">#</a> 查看本机的完整域名</h2> <p>完整域名指完全限定域名（FQDN, Fully Qualified Domain Name）。通常在shell的提示符中会显示本机的主机名，该名称也可做为单标签域名使用。但若要在没有手动配置的客户端上访问服务器，则需使用完整域名。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">hostname</span> -f
+gpu024.scut-smil.cn
+</code></pre></div><h2 id="手动解析ip地址"><a href="#手动解析ip地址" class="header-anchor">#</a> 手动解析IP地址</h2> <p>虽然域名很方便，但有时还是会用到IP地址，此时可以使用<code>host</code>命令，例如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">host</span> gpu024
+gpu024.scut-smil.cn has address <span class="token number">222.201</span>.187.170
+gpu024.scut-smil.cn has IPv6 address <span class="token number">2001</span>:250:3000:2b70:a242:3fff:fe3a:c864
+</code></pre></div><h2 id="反向域名解析"><a href="#反向域名解析" class="header-anchor">#</a> 反向域名解析</h2> <p>有时需要在已知IP地址的情况下，了解它是属于哪台主机，也可用<code>host</code>命令，例如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">host</span> <span class="token number">222.201</span>.187.170
+<span class="token number">170.187</span>.201.222.in-addr.arpa domain name pointer gpu024.scut-smil.cn.
+</code></pre></div><p>此功能只能在服务器上，或在配置了使用SMIL的DNS服务器的客户端上才能使用。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/SMIL-Infra/user-manual/edit/master/src/dns/using.md" target="_blank" rel="noopener noreferrer">改进此文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">11/13/2020, 4:13:35 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/dns/" class="prev router-link-active">
+        介绍
+      </a></span> <span class="next"><a href="/dns/all-servers.html">
+        所有服务器列表
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.27bf15aa.js" defer></script><script src="/assets/js/3.b13483ee.js" defer></script><script src="/assets/js/29.a57b217d.js" defer></script>
+  </body>
+</html>

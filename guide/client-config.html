@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>客户端配置 | SMIL服务用户手册</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="SMIL内部服务用户手册">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.35224500.css" as="style"><link rel="preload" href="/assets/js/app.27bf15aa.js" as="script"><link rel="preload" href="/assets/js/3.b13483ee.js" as="script"><link rel="preload" href="/assets/js/10.b14de3b3.js" as="script"><link rel="prefetch" href="/assets/js/1.fbf5f6e5.js"><link rel="prefetch" href="/assets/js/11.3844dd5d.js"><link rel="prefetch" href="/assets/js/12.980022fd.js"><link rel="prefetch" href="/assets/js/13.45fc977d.js"><link rel="prefetch" href="/assets/js/14.54ce2e00.js"><link rel="prefetch" href="/assets/js/15.583505d9.js"><link rel="prefetch" href="/assets/js/16.c8c5f4a0.js"><link rel="prefetch" href="/assets/js/17.c14ee82b.js"><link rel="prefetch" href="/assets/js/18.dcd9cb3e.js"><link rel="prefetch" href="/assets/js/19.5198c81c.js"><link rel="prefetch" href="/assets/js/20.39a1a2d8.js"><link rel="prefetch" href="/assets/js/21.a3fbe792.js"><link rel="prefetch" href="/assets/js/22.8ae6ab4f.js"><link rel="prefetch" href="/assets/js/23.46226149.js"><link rel="prefetch" href="/assets/js/24.6d1d0fd6.js"><link rel="prefetch" href="/assets/js/25.86deb47c.js"><link rel="prefetch" href="/assets/js/26.909d9da6.js"><link rel="prefetch" href="/assets/js/27.5fc8feff.js"><link rel="prefetch" href="/assets/js/28.35f5764d.js"><link rel="prefetch" href="/assets/js/29.a57b217d.js"><link rel="prefetch" href="/assets/js/30.766b789f.js"><link rel="prefetch" href="/assets/js/31.8f3222c0.js"><link rel="prefetch" href="/assets/js/32.1e7c7971.js"><link rel="prefetch" href="/assets/js/33.74811dce.js"><link rel="prefetch" href="/assets/js/34.b62451af.js"><link rel="prefetch" href="/assets/js/35.c21e90f8.js"><link rel="prefetch" href="/assets/js/36.5aa4f839.js"><link rel="prefetch" href="/assets/js/37.54f2fe56.js"><link rel="prefetch" href="/assets/js/38.d5e69b58.js"><link rel="prefetch" href="/assets/js/39.c2b348a4.js"><link rel="prefetch" href="/assets/js/4.20735d68.js"><link rel="prefetch" href="/assets/js/5.91253514.js"><link rel="prefetch" href="/assets/js/6.de0d0152.js"><link rel="prefetch" href="/assets/js/7.956c6c25.js"><link rel="prefetch" href="/assets/js/8.dbd1c7e5.js"><link rel="prefetch" href="/assets/js/9.84d020a4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35224500.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">SMIL服务用户手册</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  入门
+</a></div><div class="nav-item"><a href="/dns/" class="nav-link">
+  域名
+</a></div><div class="nav-item"><a href="/auth/" class="nav-link">
+  认证
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/dataset/" class="nav-link">
+  数据集
+</a></div><div class="nav-item"><a href="/mirrors.html" class="nav-link">
+  镜像
+</a></div> <a href="https://github.com/SMIL-Infra/user-manual" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/guide/getting-started.html" class="sidebar-link">开始使用</a></li><li><a href="/guide/client-config.html" aria-current="page" class="active sidebar-link">客户端配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/client-config.html#openssh" class="sidebar-link">OpenSSH</a></li><li class="sidebar-sub-header"><a href="/guide/client-config.html#xshell" class="sidebar-link">XShell</a></li><li class="sidebar-sub-header"><a href="/guide/client-config.html#dns搜索域" class="sidebar-link">DNS搜索域</a></li></ul></li><li><a href="/guide/deps-install.html" class="sidebar-link">环境搭建</a></li><li><a href="/guide/file-transfer.html" class="sidebar-link">文件传输</a></li><li><a href="/guide/nvcc.html" class="sidebar-link">编译CUDA代码</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="客户端配置"><a href="#客户端配置" class="header-anchor">#</a> 客户端配置</h1> <h2 id="openssh"><a href="#openssh" class="header-anchor">#</a> OpenSSH</h2> <p>OpenSSH客户端在每台Windows 10的PC上都已经预装，是入门最快的客户端软件。并且VS Code remote功能也使用OpenSSH客户端的配置。</p> <p>完成配置后，可用直接使用单标签域名访问服务器，例如：</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code>ssh gpu024
+</code></pre></div><p>用你喜欢的编辑器打开文件<code>%userprofile%\.ssh\config</code>（Linux用户请使用<code>~/.ssh/config</code>），并添加以下内容在文件顶部：</p> <div class="language- extra-class"><pre class="language-text"><code>CanonicalizeHostname yes
+CanonicalDomains scut-smil.cn
+
+Host *.scut-smil.cn
+User &lt;你的用户名&gt;
+</code></pre></div><p>若你还使用VS Code remote功能，继续将你常用的主机名添加到这个配置文件中，例如：</p> <div class="language- extra-class"><pre class="language-text"><code>Host gpu023
+Host gpu024
+</code></pre></div><h3 id="免密码登录"><a href="#免密码登录" class="header-anchor">#</a> 免密码登录</h3> <p>TODO</p> <h2 id="xshell"><a href="#xshell" class="header-anchor">#</a> XShell</h2> <p>TODO</p> <h2 id="dns搜索域"><a href="#dns搜索域" class="header-anchor">#</a> DNS搜索域</h2> <p>配置了系统DNS搜索域后，你将能在几乎任何位置使用单标签域名来访问各种服务。</p> <h3 id="windows"><a href="#windows" class="header-anchor">#</a> Windows</h3> <p>进入设置 -&gt; 网络和Internet -&gt; 更改适配器选项 -&gt; 双击你需要配置的网卡 -&gt; 属性</p> <p>双击Internet协议版本4（TCP/IPv4）-&gt; 高级 -&gt; DNS</p> <p>选择“附加这些DNS后缀”，并点击添加，输入scut-smil.cn，并确定。</p> <p><img src="/assets/img/windows_dns_search_domain.cd7cc60a.png" alt="Windows DNS搜索域配置截图"></p> <p>验证你的配置，例如在PowerShell中运行：</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token function">PS</span> &gt; ping gpu024
+
+正在 Ping gpu024<span class="token punctuation">.</span>scut<span class="token operator">-</span>smil<span class="token punctuation">.</span>cn <span class="token punctuation">[</span>2001:250:3000:2b70:a242:3fff:fe3a:c864<span class="token punctuation">]</span> 具有 32 字节的数据:
+来自 2001:250:3000:2b70:a242:3fff:fe3a:c864 的回复: 时间&lt;1ms
+来自 2001:250:3000:2b70:a242:3fff:fe3a:c864 的回复: 时间&lt;1ms
+来自 2001:250:3000:2b70:a242:3fff:fe3a:c864 的回复: 时间&lt;1ms
+来自 2001:250:3000:2b70:a242:3fff:fe3a:c864 的回复: 时间&lt;1ms
+
+2001:250:3000:2b70:a242:3fff:fe3a:c864 的 Ping 统计信息:
+    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 <span class="token punctuation">(</span>0<span class="token operator">%</span> 丢失<span class="token punctuation">)</span>，
+往返行程的估计时间<span class="token punctuation">(</span>以毫秒为单位<span class="token punctuation">)</span>:
+    最短 = 0ms，最长 = 0ms，平均 = 0ms
+</code></pre></div><h3 id="限制"><a href="#限制" class="header-anchor">#</a> 限制</h3> <p>由于不能颁发单标签域名的受信任的数字证书。使用https协议的服务依然需要使用完整域名访问。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/SMIL-Infra/user-manual/edit/master/src/guide/client-config.md" target="_blank" rel="noopener noreferrer">改进此文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">11/19/2020, 6:04:28 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/getting-started.html" class="prev">
+        开始使用
+      </a></span> <span class="next"><a href="/guide/deps-install.html">
+        环境搭建
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.27bf15aa.js" defer></script><script src="/assets/js/3.b13483ee.js" defer></script><script src="/assets/js/10.b14de3b3.js" defer></script>
+  </body>
+</html>
