@@ -106,6 +106,7 @@ module.exports = {
           children: [
             '',
             'cleanup',
+            'env-install',
             'faq',
           ]
         }
