@@ -44,6 +44,14 @@ chmod +x cuda_*run
 ./cuda_9.0.176.4_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
 ```
 
+### cuda-10.1
+
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
+chmod +x cuda_*.run
+./cuda_10.1.243_418.87.00_linux.run --silent --toolkit --installpath=/mnt/cephfs/smil/cuda/cuda-10.1/ --override
+```
+
 ### cuda-10.2
 
 ```bash
