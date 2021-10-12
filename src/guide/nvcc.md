@@ -6,6 +6,8 @@
 ```bash
 # 在下列几行中选择一个版本
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-9.0
+# export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.0
+# export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.1
 export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.2
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-11.0
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-11.1
@@ -42,6 +44,16 @@ chmod +x cuda_*run
 ./cuda_9.0.176.2_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
 ./cuda_9.0.176.3_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
 ./cuda_9.0.176.4_linux-run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-9.0/ --accept-eula
+```
+
+### cuda-10.0
+
+```bash
+wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
+wget http://developer.download.nvidia.com/compute/cuda/10.0/Prod/patches/1/cuda_10.0.130.1_linux.run
+chmod +x cuda_10.0*
+./cuda_10.0.130_410.48_linux --silent --toolkit --toolkitpath=/mnt/cephfs/smil/cuda/cuda-10.0/ --override
+./cuda_10.0.130.1_linux.run --silent --installdir=/mnt/cephfs/smil/cuda/cuda-10.0/ --accept-eula
 ```
 
 ### cuda-10.1
