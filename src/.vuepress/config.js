@@ -73,6 +73,7 @@ module.exports = {
             'deps-install',
             'file-transfer',
             'nvcc',
+            'tensorboard',
           ]
         }
       ],
