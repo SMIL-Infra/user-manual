@@ -75,7 +75,13 @@ module.exports = {
             'nvcc',
             'tensorboard',
           ]
-        }
+        },
+        {
+          title: '办事流程',
+          children: [
+            'patent-apply',
+          ]
+        },
       ],
       '/dns/': [
         {
