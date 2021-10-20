@@ -1,20 +1,8 @@
 [toc]
 
-
-
-> Written by: Rong Li
->
-> Date: 2021.10.09
-
-
-
-
-
 # 前置条件
 
 在校外需要访问校内服务器，首先需要本地生成秘钥文件，然后发送给服务器的管理同学（目前是连梓豪），待管理员同学配置好之后才可以继续以下步骤。（此步骤自行搜索）
-
-
 
 ![image-20211009103738645](remote-server-access.assets/image-20211009103738645.png)
 
@@ -37,13 +25,7 @@
 
 
 
-
-
 # 建立第一条隧道，通过云服务器访问校内服务器gpu023
-
-
-
-
 
 ![img](remote-server-access.assets/v2-6214f40be1d47c2270c7158378ab441c_b.png)
 
@@ -59,21 +41,19 @@
 
 
 
-## 配置阿里云服务器 Xshell
+1. **配置阿里云服务器 Xshell**
 
 设置登录的服务器是**阿里云服务器**。在xshell上保存密码或者把本机秘钥放在云服务上。
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908101242055.png" alt="image-20210908101242055" style="zoom:50%;" />
+<img src="remote-server-access.assets/image-20210908101242055.png" alt="image-20210908101242055" style="zoom:50%;" />
 
 
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908100811416.png" alt="image-20210908100811416" style="zoom:50%;" />
-
-
+<img src="remote-server-access.assets/image-20210908100811416.png" alt="image-20210908100811416" style="zoom:50%;" />
 
 在xshell上建立隧道，设置端口转发
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/v2-d12962cf3c9525a4a4e1e6d1e375feb9_b.png" alt="img" style="zoom:80%;" />
+<img src="remote-server-access.assets/v2-d12962cf3c9525a4a4e1e6d1e375feb9_b.png" alt="img" style="zoom:80%;" />
 
 点开这个建立好的session，则表示用本地电脑登录了阿里云服务器，并且这条建立好的 tunnel 准备好要转发2023端口的message到2222端口了。
 
@@ -81,23 +61,17 @@
 
 
 
-## 配置gpu023/gpu010的Xshell
-
-
+2. **配置gpu023/gpu010的Xshell**
 
 新建一个session
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908101213429.png" alt="image-20210908101213429" style="zoom:50%;" />
+<img src="remote-server-access.assets/image-20210908101213429.png" alt="image-20210908101213429" style="zoom:50%;" />
 
 
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908101024096.png" alt="image-20210908101024096" style="zoom:50%;" />
-
-
+<img src="remote-server-access.assets/image-20210908101024096.png" alt="image-20210908101024096" style="zoom:50%;" />
 
 点击这个session可以登录到gpu023/gpu010
-
-
 
 
 
@@ -105,55 +79,43 @@
 
 
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908101721945.png" alt="image-20210908101721945" style="zoom:80%;" />
+<img src="remote-server-access.assets/image-20210908101721945.png" alt="image-20210908101721945" style="zoom:80%;" />
 
 由于只有023，010暴露端口给外网了，所以剩下的其他服务器无法直接访问。因此，还需要把023作为第二层跳板机，来访问其他服务器。
 
-## 配置gpu023的Xshell
+
+
+1. **配置gpu023的Xshell**
 
 在**gpu023的xshell session**中建立一条新的隧道
 
 假设访问的是021
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908101620552.png" alt="image-20210908101620552" style="zoom:67%;" />
-
-
+<img src="remote-server-access.assets/image-20210908101620552.png" alt="image-20210908101620552" style="zoom:67%;" />
 
 所有localhost port 2321 收到的message都会转发给 gpu021:22.
 
 
 
-## 配置其他服务器的xshell
+2. **配置其他服务器的xshell**
+
+<img src="remote-server-access.assets/image-20210908102235109.png" alt="image-20210908102235109" style="zoom: 67%;" />
 
 
 
-
-
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908102235109.png" alt="image-20210908102235109" style="zoom: 67%;" />
-
-
-
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908102257785.png" alt="image-20210908102257785" style="zoom:67%;" />
-
-
+<img src="remote-server-access.assets/image-20210908102257785.png" alt="image-20210908102257785" style="zoom:67%;" />
 
 之后在同时打开 aliyun server, gpu023两个session的情况下就能登录其他服务器
 
-
-
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机-rong.assets/image-20210908102457674.png" alt="image-20210908102457674" style="zoom: 67%;" />
-
-
+<img src="remote-server-access.assets/image-20210908102457674.png" alt="image-20210908102457674" style="zoom: 67%;" />
 
 
 
 # 配置GPU pannel
 
-
-
 在gpu023建立隧道
 
-<img src="F:/Notes/实验室手册/xshell配置多级跳板机.assets/image-20210907123821971.png" alt="image-20210907123821971" style="zoom:50%;" />
+<img src="remote-server-access.assets/image-20210907123821971.png" alt="image-20210907123821971" style="zoom:50%;" />
 
 
 
@@ -161,10 +123,10 @@
 
 
 
-![image-20210907123714063](remote-server-access.assets/image-20210907123714063.png)
+![image-20210907123714063](remote-server-access.assets/image-20210907123714063-1634721771705.png)
 
 
 
 
 
-<img src="xshell配置多级跳板机.assets/image-20210907123750512.png" alt="image-20210907123750512" style="zoom:67%;" />
+![image-20210907123750512](file://F:\Notes\实验室手册\xshell配置多级跳板机.assets\image-20210907123750512.png?lastModify=1634721783)
