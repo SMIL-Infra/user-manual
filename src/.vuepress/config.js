@@ -72,6 +72,7 @@ module.exports = {
             'client-config',
             'deps-install',
             'file-transfer',
+            'remote-server-access',
             'nvcc',
             'tensorboard',
           ]
