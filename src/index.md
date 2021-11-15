@@ -1,9 +1,11 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: https://v2.vuepress.vuejs.org/images/hero.png
 tagline: 助你高效利用实验室资源
-actionText: 快速开始 →
-actionLink: /guide/
+actions:
+- text: 快速开始 →
+  link: /guide/
+  type: primary
 features:
 - title: 域名解析
   details: 忘记IP地址，使用简短的域名访问任何服务器
