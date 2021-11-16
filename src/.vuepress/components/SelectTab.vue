@@ -7,12 +7,18 @@
 </template>
 
 <script>
-import { reactive, ref, toRef, watch } from "vue";
-const selections = reactive({});
+import { reactive, ref, toRef, provide, inject, watch } from "vue";
+const selectionsSymbol = Symbol('selections');
 
-export function getSelection(subject) {
+export function setupSelections() {
+    const ss = reactive({});
+    provide(selectionsSymbol, ss);
+}
+
+export function useSelection(subject) {
+    const ss = inject(selectionsSymbol);
     let s;
-    if (!selections.hasOwnProperty(subject)) {
+    if (!ss.hasOwnProperty(subject)) {
         if (__VUEPRESS_SSR__) {
             s = ref(null);
         } else {
@@ -26,9 +32,9 @@ export function getSelection(subject) {
                 localStorage.setItem(storageKey, v);
             })
         }
-        selections[subject] = s;
+        ss[subject] = s;
     } else {
-        s = toRef(selections, subject);
+        s = toRef(ss, subject);
     }
     return s;
 }
@@ -36,15 +42,13 @@ export function getSelection(subject) {
 </script>
 
 <script setup>
-import { provide } from 'vue';
-
 const props = defineProps({
     subject: {
         type: String,
         required: true,
     },
 });
-const selection = getSelection(props.subject);
+const selection = useSelection(props.subject);
 provide('selection', selection);
 
 </script>

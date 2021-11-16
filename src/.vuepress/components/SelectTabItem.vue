@@ -1,16 +1,15 @@
 <template>
     <li class="select-tab-item"
-        :class="{ active: active }"
-        :aria-selected="active"
+        :class="{ active: state.active }"
+        :aria-selected="state.active"
         @click="selection = v">
         <slot />
     </li>
 </template>
 
-<script setup lang="ts">
-import { inject, computed, Ref } from "vue";
+<script setup>
+import { inject, computed, reactive, onMounted } from "vue";
 
-const selection: Ref<string|null> = inject('selection');
 const props = defineProps({
     v: {
         type: String,
@@ -23,11 +22,16 @@ const props = defineProps({
     }
 });
 
-if (props.default && selection.value === null) {
-    selection.value = props.v;
-}
-
-const active = computed(() => props.v === selection.value)
+const selection = inject('selection');
+const state = reactive({
+    active: props.default,
+});
+onMounted(() => {
+    if (props.default && selection.value === null) {
+        selection.value = props.v;
+    }
+    state.active = computed(() => props.v === selection.value)
+})
 </script>
 
 <style lang="scss" scoped>

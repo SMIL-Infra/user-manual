@@ -1,12 +1,13 @@
 <template>
-    <div class="select-content" :class="{active: active}">
+    <div class="select-content" :class="{active: state.active}">
         <slot/>
     </div>
 </template>
 
-<script setup lang="ts">
-import { getSelection } from './SelectTab.vue';
-import { computed } from "vue";
+<script setup>
+import { useSelection } from './SelectTab.vue';
+import { computed, reactive, onMounted } from "vue";
+
 const props = defineProps({
     s: {
         type: String,
@@ -17,8 +18,13 @@ const props = defineProps({
         required: true,
     },
 });
-const s = getSelection(props.s);
-const active = computed(() => s.value === props.v);
+const s = useSelection(props.s);
+const state = reactive({
+    active: true,
+});
+onMounted(() => {
+    state.active = computed(() => s.value === props.v);
+});
 </script>
 
 <style lang="scss" scoped>

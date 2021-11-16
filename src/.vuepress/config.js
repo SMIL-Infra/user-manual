@@ -143,5 +143,6 @@ module.exports = {
   plugins: [
     ['@vuepress/plugin-debug'],
     [require('./datasetMgr'), { datasetPages }],
-  ]
+  ],
+  clientAppSetupFiles: path.resolve(__dirname, './clientAppSetup.js'),
 }
