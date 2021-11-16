@@ -15,7 +15,6 @@
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-debug": "next",
-    "@vuepress/plugin-register-components": "next",
     "vuepress": "next"
   }
 }

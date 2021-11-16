@@ -8,7 +8,7 @@
 
 [当前各硬盘使用率](https://prometheus.scut-smil.cn/new/graph?g0.expr=ceph_osd_stat_bytes_used%2Fceph_osd_stat_bytes)
 
-<max-ceph-osd-usage/>
+<MaxCephOsdUsage/>
 
 ## 如何查看各目录空间大小？
 
@@ -34,3 +34,6 @@ cephdu -d 1 -h /mnt/mixed/dataset | sort -h
 * 文件夹中文件总大小：`getfattr -n ceph.dir.rbytes /PATH/TO/DIR-IN-CEPHFS`
 * 文件夹中文件总文件数量：`getfattr -n ceph.dir.rfiles /PATH/TO/DIR-IN-CEPHFS`
 
+<script setup>
+import MaxCephOsdUsage from '@source/.vuepress/components/MaxCephOsdUsage.vue'
+</script>

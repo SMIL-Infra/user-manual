@@ -4,4 +4,8 @@
 
 该功能仅能在校园网内使用。
 
-<local-accounts/>
+<LocalAccounts/>
+
+<script setup>
+import LocalAccounts from '@source/.vuepress/components/LocalAccounts.vue'
+</script>

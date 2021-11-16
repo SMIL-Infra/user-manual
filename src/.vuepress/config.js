@@ -142,12 +142,6 @@ module.exports = {
 
   plugins: [
     ['@vuepress/plugin-debug'],
-    [
-      '@vuepress/register-components',
-      {
-        componentsDir: path.resolve(__dirname, './components'),
-      },
-    ],
     [require('./datasetMgr'), { datasetPages }],
   ]
 }

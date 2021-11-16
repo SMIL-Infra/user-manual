@@ -642,17 +642,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-register-components@npm:next":
-  version: 2.0.0-beta.27
-  resolution: "@vuepress/plugin-register-components@npm:2.0.0-beta.27"
-  dependencies:
-    "@vuepress/core": 2.0.0-beta.27
-    "@vuepress/utils": 2.0.0-beta.27
-    chokidar: ^3.5.2
-  checksum: 73abe80acd69496268451de6a9852e658a4844b48f285d4bf639a37541a83055753826052fffc98e44e2eba504cdc9330bd48b9d576ba2a7f6378125a279ec40
-  languageName: node
-  linkType: hard
-
 "@vuepress/plugin-theme-data@npm:2.0.0-beta.27":
   version: 2.0.0-beta.27
   resolution: "@vuepress/plugin-theme-data@npm:2.0.0-beta.27"
@@ -4729,7 +4718,6 @@ fsevents@~2.3.2:
   resolution: "smil-infra-user-manual@workspace:."
   dependencies:
     "@vuepress/plugin-debug": next
-    "@vuepress/plugin-register-components": next
     vuepress: next
   languageName: unknown
   linkType: soft
