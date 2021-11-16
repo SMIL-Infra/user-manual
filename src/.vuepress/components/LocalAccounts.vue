@@ -10,13 +10,18 @@
             没有查询到本地账号。
         </p>
         <ul v-if="accountInfo !== null">
-            <local-account-host v-for="a in accountInfo" :key="a.metric.instance" :account="a">{{a.metric.instance}}</local-account-host>
+            <LocalAccountHost v-for="a in accountInfo" :key="a.metric.instance" :account="a">{{a.metric.instance}}</LocalAccountHost>
         </ul>
     </div>
 </template>
 
 <script>
+import LocalAccountHost from './LocalAccountHost.vue';
+
 export default {
+    components: {
+        LocalAccountHost
+    },
     data() {
         return {
             name: "",
