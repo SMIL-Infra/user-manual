@@ -1,6 +1,13 @@
 # 客户端配置
 
-## OpenSSH
+## ssh客户端
+
+<SelectTab subject='ssh_client'>
+<SelectTabItem v='ssh' default>OpenSSH</SelectTabItem>
+<SelectTabItem v='xshell'>Xshell</SelectTabItem>
+</SelectTab>
+
+<SelectContent s='ssh_client' v='ssh'>
 
 OpenSSH客户端在每台Windows 10的PC上都已经预装，是入门最快的客户端软件。并且VS Code remote功能也使用OpenSSH客户端的配置。
 
@@ -26,11 +33,14 @@ Host gpu023
 Host gpu024
 ```
 
-### 免密码登录
+</SelectContent>
+<SelectContent s='ssh_client' v='xshell'>
 
 TODO
 
-## XShell
+</SelectContent>
+
+### 免密码登录
 
 TODO
 
