@@ -23,7 +23,7 @@ ipa user-mod <你的用户名> --homedir /mnt/cephfs/home/<你的用户名>
 ## 添加ssh公钥
 
 ```bash
-ipa user-mod <你的用户名> --sshpubkey="ssh-rsa 12345abcde= bob@DESCTOP-XXXXXX"
+ipa user-mod <你的用户名> --sshpubkey="ssh-rsa 12345abcde= bob@DESKTOP-XXXXXX"
 ```
 添加后，该公钥即可在任何已接入的服务器中使用。
 
