@@ -21,6 +21,64 @@
 - 第一层跳板机：自己购买的阿里云服务器
 - 第二层跳板机：暴露端口给外网的校内服务器（gpu010或者gpu023）
 
+<SelectTab subject='ssh_client'>
+<SelectTabItem v='ssh' default>OpenSSH</SelectTabItem>
+<SelectTabItem v='xshell'>Xshell</SelectTabItem>
+</SelectTab>
+
+<SelectContent s='ssh_client' v='ssh'>
+
+## 用命令行访问
+
+```bash
+ssh -J smil-proxy@jumpbox.scut-smil.cn,<username>@localhost:2222 <username>@gpuxxx
+```
+
+即在你通常用于登录服务器的命令中加入`-J`参数。其中端口号2222对应服务器gpu023，位于国际校区；2223对应服务器gpu010位于五山校区。各位可自行选择服务质量较高的线路。`gpuxxx`表示特定服务器的域名。
+
+## 配置文件
+
+若要允许VS Code，scp等基于OpenSSH的工具使用跳板机从校外连接，或为了简化命令，可编辑OpenSSH的配置文件。
+
+在[客户端配置](./client-config.md?s:ssh_client=ssh)的基础上，在`Host *.scut-smil.cn`（应用于所有服务器）或`Host gpuxxx`（应用于特定服务器）下，插入`ProxyJump`配置，其作用与命令行中`-J`的参数相同。示例配置：
+```
+CanonicalizeHostname yes
+CanonicalDomains scut-smil.cn
+
+Host *.scut-smil.cn
+User <你的用户名>
+
+Host jumpbox
+User smil-proxy
+
+Host gpu023
+HostName localhost
+ProxyJump jumpbox
+Port 2222
+
+Host gpu010
+HostName localhost
+ProxyJump jumpbox
+Port 2223
+
+Host gpu024
+ProxyJump gpu023
+
+Host gpu011
+ProxyJump gpu010
+```
+
+此示例配置中首先配置如何连接跳板机，然后是通过跳板机代理连接gpu023和gpu010，再配置连接gpu024时从gpu023再次代理（即连接gpu024时共有两层代理）。同理，连接gpu011时通过gpu010代理。
+
+配置完成后即可通过简单的ssh命令访问服务器了：
+```bash
+ssh gpu024
+```
+也可在VS Code的远程SSH Targets中看到配置的服务器。
+
+</SelectContent>
+<SelectContent s='ssh_client' v='xshell'>
+
 ## 建立第一条隧道，通过云服务器访问校内服务器gpu023
 
 ![img](./remote-server-access.assets/v2-6214f40be1d47c2270c7158378ab441c_b.png)
@@ -98,3 +156,5 @@
 ![image-20210907123714063](./remote-server-access.assets/image-20210907123714063-1634721771705.png)
 
 ![Grafana选择GPU](./remote-server-access.assets/grafana-GPU.png)
+
+</SelectContent>
