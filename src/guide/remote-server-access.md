@@ -158,3 +158,7 @@ ssh gpu024
 ![Grafana选择GPU](./remote-server-access.assets/grafana-GPU.png)
 
 </SelectContent>
+
+## 下一步
+
+如何[在校外访问Web服务](./remote-web-access.md)，如Grafana、NextCloud等。
