@@ -42,7 +42,7 @@ ssh -J smil-proxy@jumpbox.scut-smil.cn,<username>@localhost:2222 <username>@gpux
 
 在[客户端配置](./client-config.md?s:ssh_client=ssh)的基础上，在`Host *.scut-smil.cn`（应用于所有服务器）或`Host gpuxxx`（应用于特定服务器）下，插入`ProxyJump`配置，其作用与命令行中`-J`的参数相同。示例配置：
 ```
-CanonicalizeHostname yes
+CanonicalizeHostname always
 CanonicalDomains scut-smil.cn
 
 Host *.scut-smil.cn
@@ -51,14 +51,15 @@ User <你的用户名>
 Host jumpbox
 User smil-proxy
 
-Host gpu023
+Host gpu023 gpu010
 HostName localhost
 ProxyJump jumpbox
+User <你的用户名>
+
+Host gpu023
 Port 2222
 
 Host gpu010
-HostName localhost
-ProxyJump jumpbox
 Port 2223
 
 Host gpu024
