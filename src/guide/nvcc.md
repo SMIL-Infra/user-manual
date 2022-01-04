@@ -6,6 +6,7 @@
 ```bash
 # 在下列几行中选择一个版本
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-9.0
+# export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-9.2
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.0
 # export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.1
 export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.2
