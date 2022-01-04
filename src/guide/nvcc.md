@@ -16,6 +16,25 @@ export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.2
 export PATH=${CUDA_HOME}/bin${PATH:+:${PATH}}
 ```
 
+::: tip
+实验室的服务器上默认的gcc版本是9，而CUDA 11之前的版本并不支持这么高的gcc的版本，会导致编译错误：
+```:no-line-numbers
+unsupported GNU version! gcc versions later than 7 are not supported!
+```
+这时可以通过以下环境变量更改默认的gcc版本：
+```bash
+export CC=gcc-7 CXX=g++-7
+```
+然后删除各种编译缓存并重试。若还是不行，则通过以下方式更改PATH中的gcc
+```bash
+ln -s /usr/bin/gcc-7 ~/.local/bin/gcc # 若~/.local/bin不存在，则先运行mkdir -p ~/.local/bin，然后重新登录
+ln -s /usr/bin/g++-7 ~/.local/bin/g++
+```
+然后运行`gcc -v`命令确认现在默认的gcc版本是7，再重试安装过程。
+
+完成后，若要恢复默认使用新版gcc，则需手动删除上面创建的`~/.local/bin/`中的两个文件
+:::
+
 ::: warning 注意
 在选择版本时，请保持CUDA_HOME引用的版本和其他库使用的版本一致，例如pytorch安装时选择的版本。
 :::
