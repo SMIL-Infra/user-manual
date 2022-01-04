@@ -46,6 +46,20 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
 :::
 
+::: tip
+实验室不同机器上有新旧不同的多种GPU，而pytorch默认只会为当前系统中的GPU编译。所以在较新的机器上安装的环境在较老的服务器上可能出现无法运行，并有以下报错：
+```:no-line-numbers
+no kernel image is available for execution on the device
+```
+在较老的服务器上编译的程序在新服务器上也可能无法发挥出最佳性能。
+
+这时可以参考[pytorch文档](https://pytorch.org/docs/stable/cpp_extension.html#torch.utils.cpp_extension.CUDAExtension)，在编译安装前手动指定需要支持的计算兼容性版本：
+```bash
+export TORCH_CUDA_ARCH_LIST="6.1 8.6"
+```
+其中的版本号可参考[NVIDIA官网](https://developer.nvidia.com/cuda-gpus#compute)的表。这里列出的是实验室所用的TITAN X/Xp和RTX 3090，可在实验室所有服务器上运行。
+:::
+
 ## /mnt/cephfs/smil/cuda中的软件的安装方法
 
 供大家在排查问题时参考
