@@ -6,7 +6,7 @@
 
 而当任意一块硬盘的使用率达到95%时集群将进入FULL状态，**不再接受写入请求**。
 
-[当前各硬盘使用率](https://prometheus.scut-smil.cn/new/graph?g0.expr=ceph_osd_stat_bytes_used%2Fceph_osd_stat_bytes)
+[当前各硬盘使用率](https://prometheus.scut-smil.cn/graph?g0.expr=ceph_osd_stat_bytes_used%2Fceph_osd_stat_bytes)
 
 <MaxCephOsdUsage/>
 
